@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+    cmake_layer:
+        image: "${BASE_IMAGE:-ubuntu}_cmake:${BASE_TAG:-18.04}"
+        build:
+            context: .
+            network: host
+            args:
+                from: "${BASE_IMAGE:-ubuntu}:${BASE_TAG:-18.04}"
